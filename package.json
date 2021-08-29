@@ -1,0 +1,21 @@
+{
+  "name": "svelte-use-resize-observer",
+  "version": "1.0.0",
+  "description": "A simple svelte action for using ResizeObserver.",
+  "main": "index.js",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+      "build": "node esbuild.config.js",
+      "postinstall": "npm run build"
+  },
+  "keywords": [
+    "svelte"
+  ],
+  "author": "Hugo Sum",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.12.24"
+  }
+}
