@@ -11,19 +11,24 @@ export type ActionReturn<Params> = {
 /**
  * Action type shim
  */
-export type ActionLike<Node extends HTMLElement> = (node: Node, params: any) => any;
+export type ActionLike<Node extends HTMLElement> = (
+  node: Node,
+  params: any
+) => any;
 
 /**
  * A primitive Action
  */
-export type Action<Node extends HTMLElement = HTMLElement, Params extends any = undefined> = (
-  node: Node,
-  params?: Params
-) => ActionReturn<Params>;
+export type Action<
+  Node extends HTMLElement = HTMLElement,
+  Params extends any = undefined
+> = (node: Node, params?: Params) => ActionReturn<Params>;
 
 const resizeObserver: Action = (node) => {
   const ro = new ResizeObserver((entries, observer) => {
-    node.dispatchEvent(new CustomEvent('resize', { detail: {entries, observer} }))
+    node.dispatchEvent(
+      new CustomEvent("resize", { detail: { entries, observer } })
+    );
   });
 
   ro.observe(node);
@@ -31,8 +36,8 @@ const resizeObserver: Action = (node) => {
   return {
     destroy() {
       ro.disconnect();
-    }
-  }
-}
+    },
+  };
+};
 
-export default resizeObserver
+export default resizeObserver;
