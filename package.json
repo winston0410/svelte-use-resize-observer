@@ -4,12 +4,13 @@
   "description": "A simple svelte action for using ResizeObserver.",
   "type": "module",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist/"
   ],
   "scripts": {
     "prepare": "npm run build",
-    "build": "node ./esbuild.config.js"
+    "build": "node ./esbuild.config.js && $(npm bin)/tsc"
   },
   "keywords": [
     "svelte"
@@ -17,6 +18,8 @@
   "author": "Hugo Sum",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.12.24"
+    "@tsconfig/svelte": "^2.0.1",
+    "esbuild": "^0.12.24",
+    "typescript": "^4.4.2"
   }
 }
