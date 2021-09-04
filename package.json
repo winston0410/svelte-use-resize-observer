@@ -8,7 +8,7 @@
     "dist/"
   ],
   "scripts": {
-      "build": "node esbuild.config.js",
+      "build": "node ./esbuild.config.js",
       "postinstall": "npm run build"
   },
   "keywords": [
