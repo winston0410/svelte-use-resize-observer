@@ -3,7 +3,7 @@ import esbuild from "esbuild";
 esbuild
   .build({
     entryPoints: ["index.ts"],
-    bundle: true,
+    bundle: false,
     format: "esm",
     outfile: "./dist/index.js",
   })
